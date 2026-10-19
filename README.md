@@ -11,13 +11,13 @@ returns PDF bytes to the model.
 Clients are open source (MIT); the rendering service is hosted and paid above the free tier.
 
 - API reference: https://papertype.dev/docs
-- Get an API key: https://papertype.dev/signup
+- Get an API key: https://papertype.dev/signup?ref=npm
 - Python SDK and CLI: `pip install papertype`
 
 ## Requirements
 
 - Node.js 20 or newer (uses the built-in `fetch`).
-- A PaperType API key (`dp_...`) from https://papertype.dev/signup.
+- A PaperType API key (`dp_...`) from https://papertype.dev/signup?ref=npm.
 
 ## Configuration
 

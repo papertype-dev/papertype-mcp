@@ -2,7 +2,7 @@ import os from "node:os";
 import path from "node:path";
 
 export const DEFAULT_BASE_URL = "https://papertype.dev";
-export const SIGNUP_URL = "https://papertype.dev/signup";
+export const SIGNUP_URL = "https://papertype.dev/signup?ref=mcp";
 
 export interface Config {
   apiKey: string;
