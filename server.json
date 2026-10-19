@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.papertype/papertype-mcp",
+  "title": "PaperType",
+  "description": "Render Markdown, HTML or invoice/certificate/report templates to PDF files via the PaperType API.",
+  "version": "0.1.0",
+  "websiteUrl": "https://papertype.dev/docs",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "papertype-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PAPERTYPE_API_KEY",
+          "description": "PaperType API key (dp_...). Get one at https://papertype.dev/signup.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "PAPERTYPE_OUTPUT_DIR",
+          "description": "Directory where rendered PDFs are saved. Default: the OS temp dir + /papertype.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "filepath"
+        },
+        {
+          "name": "PAPERTYPE_BASE_URL",
+          "description": "API origin. Default https://papertype.dev; change only for test deployments.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string",
+          "default": "https://papertype.dev"
+        }
+      ]
+    }
+  ]
+}

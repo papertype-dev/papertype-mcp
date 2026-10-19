@@ -1,0 +1,54 @@
+{
+  "name": "papertype-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for PaperType (https://papertype.dev): render Markdown, HTML or hosted templates to PDF from Claude, Cursor and other MCP clients.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "papertype-mcp": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node -e \"require('fs').chmodSync('dist/cli.js', 0o755)\"",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build && npm test",
+    "check:manifest": "node scripts/check-manifest.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pdf",
+    "papertype",
+    "markdown",
+    "html-to-pdf"
+  ],
+  "homepage": "https://papertype.dev/docs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  },
+  "mcpName": "dev.papertype/papertype-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papertype-dev/papertype-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/papertype-dev/papertype-mcp/issues"
+  }
+}
